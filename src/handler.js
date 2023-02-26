@@ -97,14 +97,14 @@ const editNoteByIdHandler = (request, h) => {
         notes[index] = {...notes[index], title, tags, body, updatedAt}; //semua key dan value yang lama akan ada, kalo yang baru akan tertimpa
         //spread operator pada kode di atas digunakan untuk mempertahankan nilai (key dan value) "notes[index]" yang tidak perlu diubah
         const response = h.response({
-            statu: 'success',
-            message: 'Catatan berhasil diperbaharui'
+            status: 'success',
+            message: 'Catatan berhasil diperbarui'
         });
         response.code(200);
         return response;
     }
     const response = h.response({
-        statu: 'fail',
+        status: 'fail',
         message: 'Gagal memperbarui catatan. Id tidak ditemukan'
     });
     response.code(404);
